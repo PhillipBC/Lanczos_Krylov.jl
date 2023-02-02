@@ -1,8 +1,8 @@
-function lanczos_evolve(H::Matrix, psi::Vector, dt::Float64, kD::Integer)
-    """
+"""
         Using the lanczos algorithm to approximate the time evolution of the form
         psi(t) = exp(-iHt)*psi(0)
-    """
+"""
+function lanczos_evolve(H::Matrix, psi::Vector, dt::Float64, kD::Integer)
     # kD is m from wiki
     D =  length(psi) # Basis dimension (n x n matrix )
     Vmat = zeros(Complex{Float64},D,kD) # Projector onto Krylov, matrix with columns Vi
